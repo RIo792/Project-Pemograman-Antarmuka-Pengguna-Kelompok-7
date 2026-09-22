@@ -1,0 +1,130 @@
+/* Tampilan dasar */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Header */
+
+/* Header */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://nibble-images.b-cdn.net/nibble/original_images/warteg-di-jakarta-01.jpg?class=large");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 60px 25px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+header p {
+    margin: 8px 0 0;
+    font-size: 18px;
+}
+
+/* Isi halaman */
+
+.container {
+    width: 90%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 25px;
+}
+
+/* Bagian tentang warteg */
+
+.about,
+.menu {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.about h2,
+.menu h2 {
+    margin-top: 0;
+}
+
+/* Gambar */
+
+.about img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Informasi warteg */
+
+.info {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f9f1e7;
+    border-radius: 8px;
+}
+
+.info p {
+    margin: 10px 0;
+}
+
+/* Google Maps */
+
+.map {
+    margin: 15px 0;
+}
+
+.map iframe {
+    border-radius: 8px;
+}
+
+/* Tabel menu */
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #999;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #8b4513;
+    color: white;
+}
+
+/* Warna baris tabel */
+
+tr:nth-child(even) {
+    background-color: #f5f5f5;
+}
+
+/* Ringkasan */
+
+.summary {
+    background-color: #f9f1e7;
+}
+
+/* Footer */
+
+footer {
+    background-color: #8b4513;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 30px;
+}
