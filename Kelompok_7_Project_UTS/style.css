@@ -1,0 +1,1488 @@
+/* Mengambil font Anton dan Poppins dari Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* Warna utama yang dipakai di berbagai bagian website */
+:root {
+    --primary: #245C3A;
+    --secondary: #6FA66B;
+    --orange: #E98B3A;
+    --yellow: #F0B33D;
+    --cream: #FFFDF8;
+    --soft-cream: #FFF3D6;
+    --text: #333333;
+    --white: #FFFFFF;
+    --border: #E4DED1;
+}
+/* Untuk Memberikan Batasan pada Responsive */
+html,
+body {
+    min-width: 360px;
+}
+
+/* Membuat ukuran elemen sudah termasuk padding dan border */
+* {
+    box-sizing: border-box;
+}
+
+/* Membuat perpindahan ke bagian halaman berjalan halus */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Pengaturan dasar seluruh halaman */
+body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Menghilangkan garis bawah link dan mengikuti warna teks sekitarnya */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Membatasi lebar konten dan membuatnya berada di tengah */
+.container {
+    width: min(1080px, 92%);
+    margin: auto;
+}
+
+/* Bagian header di atas halaman */
+.header {
+    background: var(--white);
+    border-bottom: 1px solid #eee7db;
+}
+
+/* Menata logo dan navigasi dalam satu baris */
+.nav-container {
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Mengatur tampilan nama/brand warteg */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+/* Membentuk ikon brand menjadi lingkaran */
+.brand-icon {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    color: var(--white);
+    background: var(--orange);
+    font-size: 15px;
+}
+
+/* Menata link-link navigasi secara horizontal */
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* Memberi ruang klik di bagian link navigasi */
+.nav > a,
+.dropdown > a {
+    padding: 28px 0;
+}
+
+/* Mengubah tampilan link ketika disorot atau sedang aktif */
+.nav a:hover,
+.nav .active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* Menjadi acuan posisi untuk menu dropdown */
+.dropdown {
+    position: relative;
+}
+
+/* Mengatur ukuran tanda panah kecil pada dropdown */
+.dropdown > a span {
+    font-size: 10px;
+}
+
+/* Tampilan daftar pilihan dropdown yang awalnya disembunyikan */
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 10;
+    top: 70px;
+    left: -15px;
+    min-width: 175px;
+    padding: 8px 0;
+    margin: 0;
+    list-style: none;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(36, 92, 58, 0.12);
+}
+
+/* Menampilkan submenu ketika kursor berada di dropdown */
+.dropdown:hover .submenu {
+    display: block;
+}
+
+/* Membuat setiap pilihan submenu memenuhi lebar daftar */
+.submenu li a {
+    display: block;
+    padding: 9px 16px;
+}
+
+/* Memberi warna latar saat pilihan submenu disorot */
+.submenu li a:hover {
+    background: var(--soft-cream);
+}
+
+/* Bagian utama pembuka halaman berisi teks dan ilustrasi */
+.hero {
+    min-height: 360px;
+    margin-top: 28px;
+    padding: 42px 52px;
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    align-items: center;
+    gap: 30px;
+    color: var(--white);
+    background: var(--primary);
+    border-radius: 24px;
+}
+
+/* Teks kecil di atas judul utama hero */
+.eyebrow {
+    margin: 0 0 5px;
+    color: var(--yellow);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Mengatur judul besar di bagian hero dan halaman pemesanan */
+.hero h1,
+.order-hero h1 {
+    margin: 0;
+    font-family: 'Anton', sans-serif;
+    font-size: clamp(48px, 7vw, 70px);
+    font-weight: 400;
+    line-height: 1;
+}
+
+/* Mengatur subjudul di bagian hero */
+.hero h2 {
+    margin: 8px 0 12px;
+    font-size: 24px;
+}
+
+/* Mengatur paragraf hero selain teks kecil eyebrow */
+.hero p:not(.eyebrow) {
+    max-width: 520px;
+    margin: 0 0 20px;
+    color: #edf5ed;
+}
+
+/* Menata beberapa tombol agar sejajar dan bisa turun baris */
+.button-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+/* Gaya dasar tombol utama dan tombol kecil pada kartu menu */
+.button,
+.small-button {
+    display: inline-block;
+    border: 0;
+    border-radius: 999px;
+    padding: 11px 24px;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* Warna tombol oranye dan tombol kecil */
+.button-orange,
+.small-button {
+    color: var(--white);
+    background: var(--orange);
+}
+
+/* Tampilan tombol berwarna terang */
+.button-light {
+    color: var(--primary);
+    background: var(--white);
+}
+
+/* Kotak tempat ilustrasi makanan di bagian hero */
+.hero-illustration {
+    min-height: 190px;
+    display: grid;
+    place-items: center;
+    border-radius: 18px;
+    background: var(--soft-cream);
+}
+
+/* Membuat bentuk piring sebagai dasar ilustrasi makanan */
+.plate {
+    width: 190px;
+    height: 105px;
+    position: relative;
+    border-radius: 50%;
+    background: #dfd0aa;
+    border: 15px solid #f5ead0;
+}
+
+/* Membuat bentuk nasi di atas piring */
+.rice {
+    position: absolute;
+    width: 75px;
+    height: 42px;
+    left: 42px;
+    top: 15px;
+    border-radius: 50%;
+    background: var(--white);
+}
+
+/* Membuat bentuk lauk ayam pada ilustrasi */
+.chicken {
+    position: absolute;
+    width: 48px;
+    height: 40px;
+    right: 17px;
+    top: 16px;
+    border-radius: 15px 18px 14px 20px;
+    background: #c9652d;
+}
+
+/* Membuat bentuk sayuran pada ilustrasi */
+.vegetable {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 30px;
+    bottom: -7px;
+    border-radius: 50%;
+    background: var(--secondary);
+}
+
+/* Membuat bentuk lauk tambahan pada ilustrasi */
+.side-dish {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 22px;
+    bottom: -4px;
+    border-radius: 50%;
+    background: var(--yellow);
+}
+
+/* Memberi jarak atas untuk setiap bagian konten */
+.section {
+    padding: 45px 0 0;
+}
+
+/* Menyamakan gaya judul pada beberapa bagian halaman */
+.section-heading h2,
+.about-text h2,
+.contact-box h2,
+.order-layout h2,
+.order-inline h2 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 28px;
+    line-height: 1.2;
+}
+
+/* Mengatur teks penjelas di bawah judul bagian */
+.section-heading p {
+    margin: 5px 0 20px;
+    color: #777;
+    font-size: 14px;
+}
+
+/* Membuat daftar kartu menu menjadi tiga kolom */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* Tampilan kotak untuk masing-masing menu favorit */
+.menu-card {
+    padding: 16px;
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 3px 16px rgba(51, 51, 51, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.menu-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Mengatur area gambar makanan pada kartu menu */
+.food-image {
+    width: 100%;
+    height: 115px;
+    display: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
+}
+
+/* Warna latar alternatif untuk area gambar makanan */
+.food-yellow {
+    background: #FFF3D6;
+}
+
+.food-green {
+    background: #E7F2E7;
+}
+
+.food-orange {
+    background: #FBE8DB;
+}
+
+/* Mengatur nama menu pada kartu */
+.menu-card h3 {
+    margin: 0;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+/* Mengatur tampilan harga menu pada kartu */
+.menu-card strong {
+    color: var(--orange);
+    font-size: 14px;
+}
+
+/* Menyesuaikan ukuran dan jarak tombol kecil di kartu menu */
+.small-button {
+    margin-top: 12px;
+    padding: 7px 16px;
+    font-size: 12px;
+}
+
+/* Bentuk piring kecil untuk ilustrasi di kartu menu */
+.mini-plate {
+    width: 125px;
+    height: 65px;
+    position: relative;
+    border-radius: 50%;
+    background: #d8c7a2;
+    border: 10px solid #f6eedc;
+}
+
+/* Bentuk nasi pada ilustrasi piring kecil */
+.mini-rice {
+    position: absolute;
+    width: 55px;
+    height: 30px;
+    left: 25px;
+    top: 7px;
+    border-radius: 50%;
+    background: white;
+}
+
+/* Bentuk ayam pada ilustrasi piring kecil */
+.mini-chicken {
+    position: absolute;
+    width: 38px;
+    height: 31px;
+    right: 5px;
+    top: 8px;
+    border-radius: 12px;
+    background: #c9652d;
+}
+
+/* Pengaturan dasar bentuk telur dan sayuran pada ilustrasi */
+.egg-shape,
+.vegetable-shape {
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* Bentuk telur pada ilustrasi */
+.egg-shape {
+    width: 48px;
+    height: 48px;
+    background: var(--yellow);
+    transform: translateX(-20px);
+}
+
+/* Bentuk sayuran pada ilustrasi */
+.vegetable-shape {
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    transform: translateX(20px);
+}
+
+/* Bentuk gelas pada ilustrasi minuman */
+.glass-shape {
+    width: 58px;
+    height: 66px;
+    border: 7px solid white;
+    border-radius: 6px 6px 12px 12px;
+    background: #d9efe2;
+}
+
+/* Menata bagian tentang warteg menjadi dua kolom */
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Mengatur ukuran dan pemotongan foto warteg */
+.about-image {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+/* Menata teks di bagian tentang warteg */
+.about-text {
+    display: grid;
+    gap: 12px;
+}
+
+/* Membuat paragraf tentang tampil seperti kotak informasi */
+.about-text p {
+    margin: 0;
+    padding: 18px 22px;
+    border-radius: 18px;
+    background: #FFE98D;
+    color: #8f321d;
+    font-weight: 600;
+}
+
+/* Kotak informasi umum warteg */
+.info-box {
+    padding: 24px 28px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+/* Judul kecil di dalam kotak informasi */
+.info-box h3 {
+    margin: 0 0 12px;
+    color: var(--primary);
+    font-size: 14px;
+}
+
+/* Menata informasi dan kontak dalam empat kolom */
+.info-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Mengatur paragraf di dalam daftar informasi dan kontak */
+.info-grid p,
+.contact-grid p {
+    margin: 0;
+    font-size: 13px;
+}
+
+/* Bagian footer di bawah halaman */
+.footer {
+    margin-top: 55px;
+    padding: 25px 0;
+    color: var(--white);
+    background: var(--primary);
+}
+
+/* Menata isi footer dalam satu baris */
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Mengatur judul di dalam footer */
+.footer h3 {
+    margin: 0;
+    font-size: 17px;
+}
+
+/* Mengatur teks kecil di dalam footer */
+.footer p {
+    margin: 2px 0 0;
+    font-size: 12px;
+}
+
+/* Menata link navigasi di footer */
+.footer-nav {
+    display: flex;
+    gap: 22px;
+    font-size: 13px;
+}
+
+/* Mengubah warna link footer ketika disorot */
+.footer-nav a:hover {
+    color: var(--yellow);
+}
+
+/* Bagian judul halaman seperti halaman menu atau pemesanan */
+.page-title {
+    padding: 50px 0 25px;
+    text-align: center;
+}
+
+/* Mengatur judul utama halaman */
+.page-title h1 {
+    margin: 0;
+    color: var(--primary);
+    font-family: 'Anton', sans-serif;
+    font-size: 48px;
+    font-weight: 400;
+}
+
+/* Mengatur teks deskripsi di bawah judul halaman */
+.page-title p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+/* Memberi jarak bawah pada daftar menu di halaman katalog */
+.menu-grid-page {
+    margin-bottom: 30px;
+}
+
+/* Membuat tabel bisa digeser horizontal jika terlalu lebar */
+.table-wrapper {
+    overflow-x: auto;
+}
+
+/* Gaya umum tabel harga */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Mengatur jarak dalam sel, garis, dan perataan isi tabel */
+th,
+td {
+    padding: 13px 15px;
+    border: 1px solid var(--border);
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Memberi warna khusus pada judul kolom tabel */
+thead th {
+    color: var(--white);
+    background: var(--primary);
+}
+
+/* Memberi warna latar selang-seling pada baris tabel */
+tbody tr:nth-child(even) {
+    background: #f5f8f3;
+}
+
+/* Mengubah warna baris tabel saat kursor diarahkan ke sana */
+tbody tr:hover {
+    background: #e9f1e7;
+}
+
+/* Bagian formulir pemesanan yang berada di dalam halaman */
+.order-inline {
+    padding-bottom: 10px;
+}
+
+/* Kotak yang membungkus formulir pemesanan */
+.order-form {
+    margin-top: 20px;
+    padding: 25px;
+    background: var(--soft-cream);
+    border-radius: 18px;
+}
+
+/* Membagi isi formulir menjadi dua kolom */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+}
+
+/* Memberi jarak antar kelompok isian formulir */
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* Gaya label isian dan legenda pilihan pembayaran */
+.form-group label,
+.payment-field legend {
+    display: block;
+    margin-bottom: 6px;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+/* Gaya dasar kolom input, pilihan, dan teks panjang */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d9d1c3;
+    border-radius: 8px;
+    outline: none;
+    background: var(--white);
+    color: var(--text);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+}
+
+/* Mengubah warna garis kolom ketika sedang dipilih untuk diisi */
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--orange);
+}
+
+/* Kotak yang mengelompokkan pilihan metode pembayaran */
+.payment-field {
+    margin: 5px 0 18px;
+    padding: 12px 15px;
+    border: 1px solid #ddd1bc;
+    border-radius: 10px;
+}
+
+/* Memberi jarak antar label pilihan pembayaran */
+.payment-field label {
+    margin-right: 20px;
+    font-size: 13px;
+}
+
+/* Membiarkan lebar tombol radio/checkbox mengikuti ukuran aslinya */
+.payment-field input {
+    width: auto;
+}
+
+/* Bagian pembuka khusus halaman pemesanan */
+.order-hero {
+    margin-top: 28px;
+    padding: 35px 40px;
+    color: var(--white);
+    background: var(--primary);
+    border-radius: 20px;
+}
+
+/* Mengatur paragraf terakhir pada bagian pembuka pemesanan */
+.order-hero p:last-child {
+    margin-bottom: 0;
+    color: #edf5ed;
+}
+
+/* Menata formulir dan ringkasan pesanan dalam dua kolom */
+.order-layout {
+    display: grid;
+    grid-template-columns: 1.5fr 0.8fr;
+    gap: 30px;
+    align-items: start;
+}
+
+/* Kotak ringkasan detail pesanan */
+.summary-card {
+    padding: 24px;
+    border-radius: 18px;
+    background: var(--soft-cream);
+}
+
+/* Menghilangkan jarak atas berlebih pada judul ringkasan */
+.summary-card h2 {
+    margin-top: 0;
+}
+
+/* Menata setiap baris informasi pada ringkasan pesanan */
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 13px 0;
+    border-bottom: 1px solid #e5d8bd;
+    font-size: 13px;
+}
+
+/* Tampilan khusus untuk baris total harga */
+.summary-row.total {
+    border-bottom: 0;
+    color: var(--orange);
+    font-size: 16px;
+}
+
+/* Membuat tombol memenuhi lebar kolomnya */
+.full-button {
+    width: 100%;
+}
+
+/* Memberi jarak bawah pada bagian kontak */
+.contact-box {
+    padding-bottom: 10px;
+}
+
+/* Kotak yang menampung informasi kontak */
+.contact-grid {
+    margin-top: 18px;
+    padding: 22px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+}
+
+/* Pengaturan tampilan ketika lebar layar 800px atau kurang */
+@media (max-width: 800px) {
+    /* Menumpuk isi navigasi dan footer secara vertikal */
+    .nav-container,
+    .footer-container {
+        flex-direction: column;
+        padding: 16px 0;
+    }
+
+    /* Mengizinkan link navigasi turun ke baris berikutnya */
+    .nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    /* Mengurangi jarak atas-bawah link navigasi pada layar kecil */
+    .nav > a,
+    .dropdown > a {
+        padding: 5px 0;
+    }
+
+    /* Mengubah posisi submenu agar sesuai dengan navigasi yang menumpuk */
+    .submenu {
+        top: 32px;
+    }
+
+    /* Menjadikan bagian hero, pemesanan, dan tentang satu kolom */
+    .hero,
+    .order-layout,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mengurangi padding hero agar muat di layar kecil */
+    .hero {
+        padding: 32px;
+    }
+
+    /* Menampilkan kartu menu dalam satu kolom */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Menampilkan informasi dan kontak dalam dua kolom */
+    .info-grid,
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Menampilkan kelompok isian formulir dalam satu kolom */
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pengaturan tambahan untuk layar ponsel kecil */
+@media (max-width: 480px) {
+    /* Mengecilkan judul hero agar tidak memenuhi layar */
+    .hero h1,
+    .order-hero h1 {
+        font-size: 45px;
+    }
+
+    /* Menampilkan informasi dan kontak dalam satu kolom */
+    .info-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Mengizinkan link footer turun baris dan tetap di tengah */
+    .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+
+/* Pengaturan tabel harga khusus pada halaman menu */
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    table-layout: fixed;
+}
+
+/* Mengatur isi setiap sel tabel harga */
+.menu-table th,
+.menu-table td {
+    border: 1px solid #b7b7b7;
+    padding: 13px 12px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 16px;
+}
+
+/* Mengatur warna dan ketebalan teks judul tabel harga */
+.menu-table thead th {
+    background: #245C3A;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+/* Membesarkan teks pada baris judul pertama tabel */
+.menu-table thead tr:first-child th {
+    font-size: 20px;
+}
+
+/* Memberi warna selang-seling pada baris tabel harga */
+.menu-table tbody tr:nth-child(even) {
+    background: #f3f3f3;
+}
+
+/* Mengubah warna baris tabel harga saat kursor diarahkan ke sana */
+.menu-table tbody tr:hover {
+    background: #fff3d6;
+}
+
+/* Menentukan lebar kolom pertama tabel */
+.menu-table th:nth-child(1),
+.menu-table td:nth-child(1) {
+    width: 10%;
+}
+
+/* Menentukan lebar kolom kedua tabel */
+.menu-table th:nth-child(2),
+.menu-table td:nth-child(2) {
+    width: 33%;
+}
+
+/* Menentukan lebar kolom ketiga tabel */
+.menu-table th:nth-child(3),
+.menu-table td:nth-child(3) {
+    width: 22%;
+}
+
+/* Menentukan lebar kolom keempat tabel */
+.menu-table th:nth-child(4),
+.menu-table td:nth-child(4) {
+    width: 35%;
+}
+
+/* Menjaga tabel harga tetap bisa dibaca pada layar kecil */
+@media (max-width: 700px) {
+    .menu-table {
+        min-width: 700px;
+    }
+
+    /* Memungkinkan tabel digeser ke samping di layar kecil */
+    .table-wrapper {
+        overflow-x: auto;
+    }
+}
+
+
+/* Revisi pengaturan dropdown menu */
+.dropdown {
+    position: relative;
+    height: 76px;
+    display: flex;
+    align-items: center;
+}
+
+/* Mengatur link utama dropdown agar area klik sesuai */
+.dropdown > a {
+    display: block;
+    padding: 28px 0;
+}
+
+/* Revisi tampilan submenu dropdown */
+.submenu {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 175px;
+    padding: 8px 0;
+    margin: 0;
+    list-style: none;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(36, 92, 58, 0.12);
+}
+
+/* Menampilkan submenu saat dropdown diarahkan atau difokuskan */
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+    display: block;
+}
+
+/* Menata link di dalam submenu dan mencegah teks terpotong */
+.submenu li a {
+    display: block;
+    padding: 9px 16px;
+    white-space: nowrap;
+}
+
+/* Warna latar pilihan submenu saat disorot */
+.submenu li a:hover {
+    background: var(--soft-cream);
+}
+
+/* Revisi tampilan footer yang dipakai di ketiga halaman */
+.footer {
+    margin-top: 55px;
+    padding: 22px 0;
+    color: var(--white);
+    background: var(--primary);
+}
+
+/* Memusatkan isi footer */
+.footer-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Mengatur teks footer versi revisi */
+.footer-container p {
+    margin: 0;
+    font-size: 12px;
+}
+
+/* Penyesuaian dropdown pada layar kecil */
+@media (max-width: 800px) {
+    .dropdown {
+        height: auto;
+    }
+
+    .dropdown > a {
+        padding: 5px 0;
+    }
+
+    .submenu {
+        top: calc(100% + 2px);
+    }
+}
+
+/* KATALOG MENU - pengaturan tampilan sesuai desain Figma */
+
+/* Warna latar halaman katalog */
+.catalog-body {
+    background: #f3f3f3;
+}
+
+/* Area utama katalog dengan lebar terbatas dan latar krem */
+.catalog-main {
+    width: min(810px, 92%);
+    margin: 0 auto;
+    padding: 10px 60px 45px;
+    background: var(--cream);
+    min-height: 500px;
+}
+
+/* Bagian judul katalog */
+.catalog-title {
+    text-align: center;
+    padding: 0 0 10px;
+}
+
+/* Gaya judul utama katalog */
+.catalog-title h1 {
+    margin: 0;
+    color: var(--primary);
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+/* Gaya teks deskripsi kecil di bawah judul katalog */
+.catalog-title p {
+    margin: 5px 0 0;
+    color: #777;
+    font-size: 10px;
+}
+
+/* Jarak di sekitar pilihan filter katalog */
+.catalog-filter {
+    margin: 2px 0 17px;
+}
+
+/* Ukuran dan tampilan pilihan filter katalog */
+.catalog-filter select {
+    width: 125px;
+    height: 25px;
+    padding: 0 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background: #fff;
+    color: #555;
+    font-size: 8px;
+}
+
+/* Menampilkan kartu katalog dalam tiga kolom */
+.catalog-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+/* Tampilan setiap kartu di katalog */
+.catalog-card {
+    padding: 10px;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 16px rgba(51, 51, 51, 0.04);
+}
+
+/* Area gambar di dalam kartu katalog */
+.catalog-image {
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #f2f2f2;
+}
+
+/* Membuat gambar mengisi area kartu tanpa mengubah proporsinya */
+.catalog-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Menata nama/harga menu dan tombol pesan dalam satu baris */
+.catalog-card-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    margin-top: 7px;
+}
+
+/* Gaya nama menu di kartu katalog */
+.catalog-card-info h2 {
+    margin: 0 0 2px;
+    color: var(--primary);
+    font-size: 11px;
+    line-height: 1.2;
+}
+
+/* Gaya harga di kartu katalog */
+.catalog-card-info p {
+    margin: 0;
+    color: var(--orange);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+/* Tombol pesan pada setiap kartu katalog */
+.catalog-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 58px;
+    height: 22px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    color: #fff;
+    background: var(--primary);
+    font-size: 8px;
+    font-weight: 700;
+}
+
+/* Menggelapkan tombol pesan saat kursor diarahkan */
+.catalog-order:hover {
+    background: #1c4b2f;
+}
+
+/* Memberi jarak sebelum bagian tabel harga katalog */
+.catalog-price-section {
+    margin-top: 18px;
+}
+
+/* Gaya judul bagian daftar harga */
+.catalog-price-section > h2 {
+    margin: 0 0 10px;
+    color: var(--primary);
+    font-size: 15px;
+    line-height: 1.2;
+}
+
+/* Tabel harga khusus pada katalog */
+.catalog-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+/* Mengatur ukuran sel dan garis tabel katalog */
+.catalog-table th,
+.catalog-table td {
+    padding: 7px 15px;
+    border: 1.5px solid #999;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+    font-size: 8px;
+}
+
+/* Warna latar dan teks untuk judul kolom katalog */
+.catalog-table thead th {
+    color: #fff;
+    background: var(--primary);
+    font-weight: 700;
+}
+
+/* Menghilangkan garis bawah pada baris terakhir tabel */
+.catalog-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+/* Menetapkan latar putih untuk baris genap tabel katalog */
+.catalog-table tbody tr:nth-child(even) {
+    background: #fff;
+}
+
+/* Warna latar baris katalog saat kursor diarahkan */
+.catalog-table tbody tr:hover {
+    background: #f7faf6;
+}
+
+/* Area footer khusus halaman katalog */
+.catalog-footer {
+    width: min(810px, 92%);
+    margin: 0 auto;
+    padding: 0;
+    min-height: 52px;
+}
+
+/* Memusatkan isi footer katalog */
+.catalog-footer .footer-container {
+    min-height: 52px;
+    justify-content: center;
+}
+
+/* Ukuran teks footer katalog */
+.catalog-footer p {
+    margin: 0;
+    font-size: 9px;
+}
+
+/* Menyembunyikan teks secara visual, tetapi tetap tersedia untuk pembaca layar */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Mengubah tata letak katalog pada layar kecil */
+@media (max-width: 700px) {
+    /* Mengurangi jarak kiri dan kanan area katalog */
+    .catalog-main {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    /* Menampilkan kartu katalog satu per baris */
+    .catalog-cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* Membatasi lebar kartu dan memusatkannya */
+    .catalog-card {
+        max-width: 320px;
+        margin: 0 auto;
+        width: 100%;
+    }
+}
+
+/* HOME - pengaturan foto asli pada halaman utama */
+
+/* Area foto di bagian hero halaman utama */
+.hero-photo {
+    overflow: hidden;
+    padding: 0;
+    min-height: 190px;
+}
+
+/* Memastikan foto hero mengisi area dan dipotong sesuai ruang */
+.hero-photo img {
+    width: 100%;
+    height: 100%;
+    min-height: 190px;
+    display: block;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 18px;
+}
+
+/* Menyembunyikan bagian gambar yang keluar dari area kartu menu */
+.menu-card .food-image {
+    overflow: hidden;
+}
+
+/* Mengatur gambar makanan agar memenuhi area gambar kartu */
+.menu-card .food-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* Menampilkan tiga kolom pada bagian informasi halaman utama */
+.info-grid-home {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Gaya link pada bagian informasi halaman utama */
+.info-grid-home a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Memberi garis bawah pada link saat disorot */
+.info-grid-home a:hover {
+    text-decoration: underline;
+}
+
+/* Menampilkan informasi halaman utama satu kolom pada layar kecil */
+@media (max-width: 700px) {
+    .info-grid-home {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Pengaturan bagian peta lokasi Warteg Bu Dhea */
+.location-map {
+    margin-top: 22px;
+}
+
+/* Menata judul/keterangan peta dan link di sebelahnya */
+.location-map-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    margin-bottom: 12px;
+}
+
+/* Judul kecil di bagian peta */
+.location-map-header h4 {
+    margin: 0 0 5px;
+    color: var(--primary);
+    font-size: 16px;
+}
+
+/* Keterangan singkat di bagian peta */
+.location-map-header p {
+    margin: 0;
+    color: #666;
+    font-size: 12px;
+}
+
+/* Gaya link menuju peta yang dibuka di luar halaman */
+.location-map-header a {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Garis bawah link peta ketika disorot */
+.location-map-header a:hover {
+    text-decoration: underline;
+}
+
+/* Mengatur ukuran tampilan peta yang disematkan */
+.location-map iframe {
+    display: block;
+    width: 100%;
+    height: 260px;
+    border: 0;
+    border-radius: 14px;
+}
+
+/* Menyesuaikan bagian peta pada layar kecil */
+@media (max-width: 700px) {
+    /* Menumpuk judul dan link peta secara vertikal */
+    .location-map-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Mengurangi tinggi peta agar sesuai layar ponsel */
+    .location-map iframe {
+        height: 220px;
+    }
+}
+/* Efek hover tombol Pesan pada katalog */
+.catalog-order {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.catalog-order:hover {
+    transform: scale(1.08);
+    box-shadow: 0 4px 10px rgba(36, 92, 58, 0.25);
+}
+
+
+
+/* Tombol Menu untuk membuka dropdown */
+.dropdown-toggle {
+    display: block;
+    padding: 28px 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-family: 'Poppins', Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle.active {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+@media (max-width: 800px) {
+    .dropdown-toggle {
+        padding: 5px 0;
+    }
+}
+
+/* Bagian video Warteg */
+.video-warteg-box {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+    gap: 45px;
+
+    background: linear-gradient(135deg, #245c3a, #347a4e);
+    border-radius: 22px;
+    padding: 35px 45px;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Video promosi di sebelah kiri */
+.video-warteg-player {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    border-radius: 16px;
+    background: #000000;
+}
+
+.video-warteg-player video {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* Teks di sebelah kanan */
+.video-warteg-text {
+    text-align: left;
+}
+
+.video-warteg-text .eyebrow {
+    color: #E98B3A;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.video-warteg-text h2 {
+    font-size: 38px;
+    line-height: 1.1;
+    margin: 0 0 15px;
+}
+
+.video-warteg-text p:last-child {
+    font-size: 15px;
+    line-height: 1.8;
+    max-width: 400px;
+    margin: 0;
+    color: #e8f5eb;
+}
+
+/* Tampilan HP */
+@media (max-width: 800px) {
+    .video-warteg-box {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 28px;
+    }
+
+    .video-warteg-player {
+        max-width: 100%;
+        order: 1;
+    }
+
+    .video-warteg-text {
+        order: 2;
+        text-align: center;
+    }
+
+    .video-warteg-text h2 {
+        font-size: 30px;
+    }
+
+    .video-warteg-text p:last-child {
+        margin: 0 auto;
+    }
+}
